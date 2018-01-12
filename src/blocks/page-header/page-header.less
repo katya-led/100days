@@ -1,0 +1,31 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/page-header/page-header.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.page-header {
+  padding: 15px 0;
+  background-color: @gray-darker;
+
+  &__inner {
+    .container();
+
+    @media (min-width: @screen-sm) {
+      display: flex;
+      align-items: baseline;
+    }
+  }
+
+  &__title {
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: @font-size--h2;
+    color: @color-accent;
+
+    @media (min-width: @screen-sm) {
+      padding-bottom: 0;
+      padding-right: 30px;
+      text-align: left;
+    }
+  }
+}

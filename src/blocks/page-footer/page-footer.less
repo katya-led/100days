@@ -1,0 +1,23 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/page-footer/page-footer.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.page-footer {
+  padding: 35px 0;
+  background-color: @gray-darker;
+  
+  &__inner {
+    .container();
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    color: @color-accent;
+  }
+}

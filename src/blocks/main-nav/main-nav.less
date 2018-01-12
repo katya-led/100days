@@ -1,0 +1,20 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/main-nav/main-nav.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    font-size: 1.8rem;
+  }
+
+  &__link {
+    padding: 5px 10px;
+    display: block;
+    width: 100%;
+    color: @color-accent;
+  }
+}
