@@ -1,0 +1,42 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/digit/digit.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.digit {
+  width: 40vw;
+  height: 40vh;
+  background: linear-gradient(45deg, #443aa0, #4ec5ca);
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+  color: #fff;
+  
+  &__one-one,
+  &__one-two,
+  &__zero-one,
+  &__zero-two {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  }
+
+  &__one-two {
+    background-color: #fff;
+    border-radius: 3px;
+    width: 25px;
+    height: 100px;
+  }
+
+  &__text {
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+
+    &--big {
+      font-size: 81px;
+      font-weight: 700;
+    }
+
+    &--small {
+      font-size: 26px;
+      font-weight: 300;
+    }
+  }
+}
