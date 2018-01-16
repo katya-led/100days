@@ -1,4 +1,6 @@
-# Стартовый проект с gulp
+https://thecatz.gitlab.io/100dayscss/
+
+# 100 days - CSS challenge
 
 Установка: `npm i`.
 
@@ -13,7 +15,7 @@
 ## Выгрузка на gitlab-pages
 
 Содержимое проекта выгружается на [gitlab-pages] автоматически из ветки ```master```
-Адрес для просмотра будет таким: https://thecatz.gitlab.io/skydrive/
+Адрес для просмотра будет таким: https://thecatz.gitlab.io/100dayscss/
 
 
 ## Парадигма
