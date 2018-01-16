@@ -1,0 +1,15 @@
+image: node:4.2.2
+
+pages:
+  stage: deploy
+  script:
+  - npm install
+  - npm run build
+  - mkdir .public
+  - cp -r build/* .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - develop
