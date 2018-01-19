@@ -11,21 +11,6 @@
   align-items: center;
   justify-content: center;
 
-  // &__menu-icon {
-  //   z-index: 100;
-  //   cursor: pointer;
-  // }
-
-  // &__line-1,
-  // &__line-2,
-  // &__line-3 {
-  //   width: 100px;
-  //   height: 8px;
-  //   background-color: #fff;
-  //   border-radius: 3px;
-  //   box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-  // }
-
   &__toggler {
     display: flex;
     align-items: center;
@@ -43,7 +28,7 @@
       border-radius: 5px;
       box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
       position: relative;
-      transition: background .3s .5s;
+      transition: box-shadow .3s .5s, background .3s .5s;
 
       &:before,
       &:after {
@@ -67,5 +52,28 @@
         top: -20px;
       }
     }
+
+    &--close {
+      > span {
+        transition: box-shadow .3s 0, background .3s 0;
+        background: transparent;
+        box-shadow: 0px 1px 10px rgba(0,0,0,0.0);
+        
+        &:before,
+        &:after {
+          transition: top .3s, transform .3s .5s;
+          top: 0;
+        }
+        
+        &:before {
+          transform: rotate3d(0, 0, 1, 45deg);
+        }
+        
+        &:after {
+          transform: rotate3d(0, 0, 1, 135deg);
+        }
+      }
+    }
+
   }
 }

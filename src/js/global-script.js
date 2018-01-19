@@ -36,6 +36,12 @@ function ready(fn) {
 
 // Свой код с jQuery
 
-// $( document ).ready(function() {
+$( document ).ready(function() {
 
-// });
+  // action burger 
+  var burger = document.querySelector(".burger__toggler");
+  burger.addEventListener("click", function() {
+    burger.classList.toggle("burger__toggler--close");
+  });
+
+});
