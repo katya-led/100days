@@ -11,7 +11,7 @@ const ghPagesUrl = pjson.config.ghPages;
 const gulp = require('gulp');
 const less = require('gulp-less');
 const debug = require('gulp-debug');
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 const cleanss = require('gulp-cleancss');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -67,7 +67,7 @@ if (blocks.additionalCss.length) {
 gulp.task('less', function () {
   console.log('---------- Компиляция LESS');
   return gulp.src(dirs.source + '/less/style.less')
-    .pipe(gulpIf(isDev, sourcemaps.init()))
+    // .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(debug({ title: "LESS:" }))
     .pipe(less())
     .on('error', notify.onError(function (err) {
@@ -85,7 +85,7 @@ gulp.task('less', function () {
     .pipe(gulpIf(!isDev, cleanss()))
     .pipe(rename('style.min.css'))
     .pipe(debug({ title: "RENAME:" }))
-    .pipe(gulpIf(isDev, sourcemaps.write('/')))
+    // .pipe(gulpIf(isDev, sourcemaps.write('/')))
     .pipe(size({
       title: 'Размер',
       showFiles: true,
@@ -137,11 +137,11 @@ gulp.task('copy:css', function (callback) {
 gulp.task('img', function () {
   console.log('---------- Копирование и оптимизация картинок');
   return gulp.src([
-        dirs.source + '/img/**/**/*.{gif,png,jpg,jpeg,svg}',      // какие файлы обрабатывать (путь из константы, маска имени, много расширений)
-      ],
-      {since: gulp.lastRun('img')}                          // оставим в потоке обработки только изменившиеся от последнего запуска задачи (в этой сессии) файлы
-    )
-    .pipe(flatten({ includeParents: 1}))                           //включение 1 или выключение 0 подпапок /fonts/opensans/
+    dirs.source + '/img/**/**/*.{gif,png,jpg,jpeg,svg}',      // какие файлы обрабатывать (путь из константы, маска имени, много расширений)
+  ],
+    { since: gulp.lastRun('img') }                          // оставим в потоке обработки только изменившиеся от последнего запуска задачи (в этой сессии) файлы
+  )
+    .pipe(flatten({ includeParents: 1 }))                           //включение 1 или выключение 0 подпапок /fonts/opensans/
     .pipe(newer(dirs.build + '/img'))  // оставить в потоке только изменившиеся файлы
     .pipe(imagemin({
       progressive: true,
@@ -235,7 +235,7 @@ gulp.task('js', function (callback) {
   if (blocks.js.length > 0) {
     console.log('---------- Обработка JS');
     return gulp.src(blocks.js)
-      .pipe(gulpIf(isDev, sourcemaps.init()))
+      // .pipe(gulpIf(isDev, sourcemaps.init()))
       .pipe(concat('script.min.js'))
       .pipe(gulpIf(!isDev, uglify()))
       .on('error', notify.onError(function (err) {
@@ -244,7 +244,7 @@ gulp.task('js', function (callback) {
           message: err.message
         }
       }))
-      .pipe(gulpIf(isDev, sourcemaps.write('.')))
+      // .pipe(gulpIf(isDev, sourcemaps.write('.')))
       .pipe(size({
         title: 'Размер',
         showFiles: true,
