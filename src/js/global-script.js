@@ -41,6 +41,7 @@ $( document ).ready(function() {
   // action burger 
   var burger = document.querySelector(".burger__toggler");
   burger.addEventListener("click", function() {
+    event.preventDefault();
     burger.classList.toggle("burger__toggler--close");
   });
 
