@@ -1,0 +1,26 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/experiment/experiment.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.experiment {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__inner {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 50px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
+  }
+}
