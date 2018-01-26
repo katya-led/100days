@@ -1,0 +1,16 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/day-time/day-time.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.day-time {
+  .container-position();
+  
+  &.night{
+    background: #333;
+  }
+
+  &.day{
+    background: lime;
+  }
+}

@@ -38,11 +38,34 @@ function ready(fn) {
 
 $( document ).ready(function() {
 
+
+  // experiment day/night time 
+  date = new Date();
+  var hours = date.getHours(); 
+  var time = '';
+  var element = document.querySelector('.day-time');
+  if ((hours >= 9) && (hours <= 18)) { time='day';}
+  else{
+    time='night';
+  }
+
+  if(!element.classList.contains(time)){
+    element.classList.add(time);
+  }
+
   // action burger 
   var burger = document.querySelector(".burger__toggler");
   burger.addEventListener("click", function() {
     event.preventDefault();
     burger.classList.toggle("burger__toggler--close");
   });
+
+  // experiment action burger
+  var animation = document.querySelector(".burger-animation__link");
+  animation.addEventListener("click", function() {
+    event.preventDefault();
+    animation.classList.toggle("burger-animation__link--close");
+  });
+
 
 });
