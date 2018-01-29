@@ -10,5 +10,72 @@
   &__inner {
     width: 220px;
     height: 220px;
+    border: 1px solid #000;
+    position: relative;
+  }
+
+  &__dot {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  &__dot-1 {
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    top: 95px;
+    left: 95px;
+    // animation: scale-1 2s timing-function delay infinite direction fill-mode;
+  }
+
+  &__dot-2 {
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    top: 80px;
+    left: 80px;
+    background: #000;
+    // animation: scale-2 2s timing-function delay infinite direction fill-mode;
+  }
+
+  &__dot-3 {
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+    top: 65px;
+    left: 65px;
+    // animation: scale-3 2s timing-function delay infinite direction fill-mode;
   }
 }
+
+@keyframes scale-1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-2 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-3 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
