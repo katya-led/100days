@@ -10,7 +10,6 @@
   &__inner {
     width: 220px;
     height: 220px;
-    border: 1px solid #000;
     position: relative;
   }
 
@@ -27,7 +26,7 @@
     height: 30px;
     top: 95px;
     left: 95px;
-    animation: scale-1 2s ease infinite alternate;
+    animation: scale-1 2s cubic-bezier(.24,.9,.51,1) infinite alternate;
   }
 
   &__dot-2 {
@@ -36,7 +35,7 @@
     height: 60px;
     top: 80px;
     left: 80px;
-    animation: scale-2 2s ease infinite alternate;
+    animation: scale-2 2s cubic-bezier(.24,.9,.51,1) infinite alternate;
   }
 
   &__dot-3 {
@@ -45,7 +44,7 @@
     height: 90px;
     top: 65px;
     left: 65px;
-    animation: scale-3 2s ease infinite alternate;
+    animation: scale-3 2s cubic-bezier(.24,.9,.51,1) infinite alternate;
   }
 }
 
