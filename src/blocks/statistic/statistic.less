@@ -1,0 +1,43 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/statistic/statistic.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.statistic {
+  .container-position();
+  background-color:  #42a7a1;
+
+  &__card {
+    width: 280px;
+    border-radius: 3px;
+    background-color: #fff;;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  }
+
+  &__header {
+    padding: 10px 15px 15px;
+    background-color: #f1ba64;
+    color: #fff;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__title,
+  &__value {
+    font-family: 'Open Sans', Arial;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__date,
+  &__type {
+    font-family: 'Open Sans', Arial;
+    font-size: 11px;
+    font-weight: 400;
+  }
+}
