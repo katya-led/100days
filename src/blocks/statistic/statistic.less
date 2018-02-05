@@ -77,6 +77,33 @@
     }
   }
 
+  &__data {
+    padding: 0 10px;
+    position: relative;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    polyline {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    &--red {
+      stroke: #7ba2ff;
+    }
+
+    &--blue {
+      stroke: #fa7373;
+    }
+  }
+
   &__days {
     display: flex;
     justify-content: space-between;
