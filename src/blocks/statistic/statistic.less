@@ -40,4 +40,54 @@
     font-size: 11px;
     font-weight: 400;
   }
+
+  &__parameter {
+    padding: 0 10px;
+    text-align: right;
+  }
+
+  &__red,
+  &__blue {
+    padding-left: 25px;
+    font-size: 9px;
+    color: @gray;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      display: block;
+      width: 10px;
+      height: 3px;
+    }
+  }
+
+  &__red {
+    &::before {
+      background: #fa7373;
+    }
+
+  }
+
+  &__blue {
+    &::before {
+      background: #7ba2ff;
+    }
+  }
+
+  &__days {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 15px;
+  }
+
+  &__day {
+    font-family: 'Open Sans', Arial;
+    font-size: 9px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: @gray-light;
+  }
 }
