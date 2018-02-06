@@ -42,7 +42,7 @@
   }
 
   &__parameter {
-    padding: 0 10px;
+    padding: 10px 10px 14px;
     text-align: right;
   }
 
@@ -77,8 +77,35 @@
     }
   }
 
+  &__container {
+    width: 260px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px; 
+    background: #f2f2f2;
+
+    &--1 {
+      top: 0;
+    }
+
+    &--2 {
+      top: 50%;
+    }
+
+    &--3 {
+      bottom: 0;
+    }
+  }
+
   &__data {
-    padding: 0 10px;
     position: relative;
   }
 
@@ -96,18 +123,54 @@
     }
 
     &--red {
-      stroke: #7ba2ff;
+      stroke: #fa7373;
     }
 
     &--blue {
-      stroke: #fa7373;
+      stroke: #7ba2ff;
+      top: -3px;
     }
   }
+
+  // &__tooltip {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   font-size: 11px;
+  //   line-height: 11px;
+  //   color: #fff;
+  //   padding: 8px 6px;
+  //   border-radius: 3px;
+  //   background: #fa7373;
+  //   z-index: 100;
+
+  //   &:after {
+  //     position: absolute;
+  //     display: block;
+  //     content: '';
+  //     height: 6px;
+  //     width: 6px;
+  //     left: 50%;
+  //     margin-left: -3px;
+  //     bottom: -3px;
+  //     background: #fa7373;
+  //     transform: rotate(45deg);
+  //   }
+  // }
+
+  // &__point {
+  //   position: absolute;
+  //   width: 6px;
+  //   height: 6px;
+  //   border-radius: 3px;
+  //   z-index: 50;
+  //   cursor: pointer;
+  // }
 
   &__days {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px 15px;
+    padding: 10px 10px 15px;
   }
 
   &__day {
