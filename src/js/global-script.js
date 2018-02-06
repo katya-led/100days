@@ -40,18 +40,19 @@ $( document ).ready(function() {
 
 
   // experiment day/night time 
-  // date = new Date();
-  // var hours = date.getHours(); 
-  // var time = '';
-  // var element = document.querySelector('.day-time');
-  // if ((hours >= 9) && (hours <= 18)) { time='day';}
-  // else{
-  //   time='night';
-  // }
+  
+  date = new Date();
+  var hours = date.getHours(); 
+  var time = '';
+  var element = document.querySelector('.day-time');
+  if ((hours >= 9) && (hours <= 18)) { time='day';}
+  else{
+    time='night';
+  }
 
-  // if(!element.classList.contains(time)){
-  //   element.classList.add(time);
-  // }
+  if(!element.classList.contains(time)){
+    element.classList.add(time);
+  }
 
   // action burger 
   
