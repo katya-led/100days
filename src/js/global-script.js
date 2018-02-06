@@ -41,28 +41,34 @@ $( document ).ready(function() {
 
   // experiment day/night time 
   
-  date = new Date();
-  var hours = date.getHours(); 
-  var time = '';
-  var element = document.querySelector('.day-time');
-  if ((hours >= 9) && (hours <= 18)) { time='day';}
-  else{
-    time='night';
-  }
+  try {
+    date = new Date();
+    var hours = date.getHours(); 
+    var time = '';
+    var element = document.querySelector('.day-time');
+    if ((hours >= 9) && (hours <= 18)) { time='day';}
+    else{
+      time='night';
+    }
 
-  if(!element.classList.contains(time)){
-    element.classList.add(time);
+    if(!element.classList.contains(time)){
+      element.classList.add(time);
+    }
+  } 
+  catch(error){
+      console.log('no time here its timeless place :3')
   }
 
   // action burger 
   
-try{
-  var burger = document.querySelector(".burger__toggler");
-    burger.addEventListener("click", function() {
-    event.preventDefault();
-    burger.classList.toggle("burger__toggler--close");
-  });
-  } catch(error){
+  try {
+    var burger = document.querySelector(".burger__toggler");
+      burger.addEventListener("click", function() {
+      event.preventDefault();
+      burger.classList.toggle("burger__toggler--close");
+    });
+  } 
+  catch(error){
     console.log('no burgers here its vegan place')
   }
 
