@@ -8,7 +8,8 @@
   background: linear-gradient(45deg, #eebe6c, #ca7c4e);
 
   &__inner {
-    width: 320px;
+    width: 70%;
+    max-width: 420px;
     font-family: 'Open Sans', Arial;
     font-weight: 400;
     color: #786450;
@@ -16,5 +17,141 @@
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
+  }
+
+  &__card {
+    display: flex;
+  }
+
+  &__item {
+    text-align: center;
+
+    &--info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 5px 25px;
+    }
+
+    &--stats {
+      width: 200px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #f5e8df;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+
+      .profile__circle--1 {
+        transform: rotate(360deg);
+      }
+
+      .profile__circle--2 {
+        transform: rotate(-360deg);
+      }
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    border: 1px solid;
+    border-radius: 50%;
+    transition: transform 1s ease-in-out;
+
+    &--1 {
+      width: 76px;
+      height: 76px;
+      top: -3px;
+      left: -3px;
+      border-color: #786450 #786450 #786450 transparent;
+    }
+
+    &--2 {
+      width: 82px;
+      height: 82px;
+      top: -6px;
+      left: -6px;
+      border-color: #786450 transparent #786450 #786450;
+    }
+  }
+
+  &__name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  &__job {
+    font-size: 11px;
+    line-height: 11px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  &__box {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f5e8df;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    transition: all .4s ease-in-out;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: #e1cfc2;
+    }
+  }
+
+
+  &__value {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  &__parameter {
+    font-size: 11px;
+    line-height: 11px;
+  }
+
+  &__btn {
+    width: 120px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: none;
+    border: 1px solid #786450;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+    color: #786450;
+    
+    &:hover,
+    &:focus {
+      background: #786450;
+      color: #fff;
+    }
+
+    &:active {
+      background: #4b3e31
+    }
   }
 }
