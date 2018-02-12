@@ -1,0 +1,159 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/notifications/notifications.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.notifications {
+  .container-position();
+  background-color: #264057;
+
+  &__panel {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    color: #666666;
+    border-radius: 3px;
+    box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  &__header {
+    padding: 20px;
+    background-color: #5f98cd;
+    position: relative;
+  }
+
+  &__title {
+    font-family: @font-family;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__search-input {
+    position: absolute;
+    top: 13px;
+    right: 55px;
+    width: 230px;
+    height: 34px;
+    border-radius: 20px;
+    border: none;
+    background-color: #fff;
+    padding: 0 15px;
+    font-size: 13px;
+    color: #666;
+
+    display: none;
+  }
+
+  &__menu-icon {
+    position: absolute;
+    top: 0;
+    width: 29px;
+    height: 15px;
+    top: 23px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+    user-select: none;
+
+
+    &:hover {
+      .notifications__dash {
+        background: #fff;
+      }
+
+      .notifications__icon-circle {
+        background: #fff;
+      }
+    }
+  }
+
+  &__dash {
+    position: absolute;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background: #b2daff;
+    border-radius: 3px;
+    transition: background .2s ease-in-out;
+
+    &--top {
+      width: 20px;
+    }
+
+    &--bottom {
+      width: 29px;
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &__icon-circle {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    top: -2px;
+    right: 0;
+    border-radius: 4px;
+    background: #b2daff;
+    transition: background .2s ease-in-out;
+  }
+
+  &__list {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 27px;
+    bottom: 0;
+    width: 3px;
+    background: #ebebeb;
+  }
+
+  &__item {
+    margin: 25px 20px 0 45px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      color: #5f98cd;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    top: 0;
+    left: -22px;
+    background: #fff;
+    border: 2px solid #5f98cd;
+    border-radius: 6px;
+    box-shadow: 0 0 0 3px #fff;
+  }
+
+  &__time {
+    font-size: 11px;
+    line-height: 11px;
+    margin-bottom: 2px;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+        
+    b {
+      font-weight: 600;
+    }
+  }
+}

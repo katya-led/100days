@@ -1,0 +1,48 @@
+<!--DEV
+
+Нужно убрать пробел между @-ами:
+
+@ @include('blocks/notifications/notifications.html')
+
+-->
+<div class="notifications">
+  
+    <div class="notifications__panel">
+      <div class="notifications__header">
+        <div class="notifications__menu-icon">
+          <div class="notifications__dash notifications__dash--top"></div>
+          <div class="notifications__dash notifications__dash--bottom"></div>
+          <div class="notifications__icon-circle"></div>
+        </div>
+        <h1 class="notifications__title">Notifications</h1>
+        <input type="text" class="notifications__search-input" placeholder="Search ...">
+        <div class="notifications__search-icon"></div>
+      </div>
+      <div class="notifications__list">
+        <div class="notifications__line"></div>
+        <div class="notifications__item">
+          <div class="notifications__circle"></div>
+          <p class="notifications__time">9:24 AM</p>
+          <p class="notifications__text"><b>John Walker</b> posted a photo on your wall.</p>
+        </div>
+        <div class="notifications__item">
+          <div class="notifications__circle"></div>
+          <p class="notifications__time">8:19 AM</p>
+          <p class="notifications__text"><b>Alice Parker</b> commented your last post.</p>
+        </div>
+        <div class="notifications__item">
+          <div class="notifications__circle"></div>
+          <p class="notifications__time">Yesterday</p>
+          <p class="notifications__text"><b>Luke Wayne</b> added you as friend.</p>
+        </div>
+      </div>
+    </div>
+    <ul class="notifications__menu">
+      <li><span class="notifications__point notifications__dashboard"></span>Dashboard</li>
+      <li><span class="notifications__point notifications__user"></span>Profile</li>
+      <li><span class="notifications__point notifications__bell"></span>Notifications</li>
+      <li><span class="notifications__point notifications__comments"></span>Messages</li>
+      <li><span class="notifications__point notifications__gear"></span>Settings</li>
+    </ul>
+ 
+</div>
