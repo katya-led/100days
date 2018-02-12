@@ -1,0 +1,23 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/duotone/duotone.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.duotone {
+  .container-position();
+  background: linear-gradient(30deg, #366b79 0%, #b84181 60%, #f34773 70%);
+
+  &__circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(at bottom left, #75f5f3 15%, #b84181 60%, #f34773 75%);
+    // background: radial-gradient(circle at 20% 100%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    position: relative;
+    transition: transform .9s cubic-bezier(.24,.9,.51,1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
