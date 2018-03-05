@@ -16,7 +16,9 @@
         </div>
         <h1 class="notifications__title">Notifications</h1>
         <input type="text" class="notifications__search-input" placeholder="Search ...">
-        <div class="notifications__search-icon"></div>
+        <svg width="20" height="20" class="notifications__search-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search" fill="#b2daff"></use>
+        </svg>
       </div>
       <div class="notifications__list">
         <div class="notifications__line"></div>
@@ -38,11 +40,36 @@
       </div>
     </div>
     <ul class="notifications__menu">
-      <li class="notifications__point"><span class="notifications__dashboard"></span>Dashboard</li>
-      <li class="notifications__point"><span class="notifications__user"></span>Profile</li>
-      <li class="notifications__point"><span class="notifications__bell"></span>Notifications</li>
-      <li class="notifications__point"><span class="notifications__comments"></span>Messages</li>
-      <li class="notifications__point"><span class="notifications__gear"></span>Settings</li>
+      <li class="notifications__point">
+        <svg width="10" height="10" class="notifications__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dashboard" fill="#b2daff"></use>
+        </svg>
+        <span class="notifications__name">Dashboard</span>
+      </li>
+      <li class="notifications__point">
+        <svg width="10" height="10" class="notifications__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-profile" fill="#b2daff"></use>
+        </svg>
+        <span class="notifications__name">Profile</span>
+      </li>
+      <li class="notifications__point">
+        <svg width="10" height="10" class="notifications__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-notification" fill="#b2daff"></use>
+        </svg>
+        <span class="notifications__name">Notifications</span>
+      </li>
+      <li class="notifications__point">
+        <svg width="10" height="10" class="notifications__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-message" fill="#b2daff"></use>
+        </svg>
+        <span class="notifications__name">Messages</span>
+      </li>
+      <li class="notifications__point">
+        <svg width="10" height="10" class="notifications__icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-settings" fill="#b2daff"></use>
+        </svg>
+        <span class="notifications__name">Settings</span>
+      </li>
     </ul>
  
 </div>
