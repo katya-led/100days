@@ -21,7 +21,9 @@ const gulpIf = require('gulp-if');
 const del = require('del');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
-const svgstore = require('gulp-svgstore');
+// const svgstore = require('gulp-svgstore');
+const svgparty = require('gulp-svg-sprites');
+const spritePath = dirs.source + '/blocks/sprite-svg--html/svg/';
 const svgmin = require('gulp-svgmin');
 const path = require('path');
 const cheerio = require('gulp-cheerio');
@@ -185,37 +187,76 @@ gulp.task('fonts:copy', function () {
 });
 
 // Сборка SVG-спрайта для блока sprite-svg--localstorage
-gulp.task('svgstore', function (callback) {
-  let spritePath = dirs.source + '/blocks/sprite-svg--localstorage/svg/';
+// gulp.task('svgstore', function (callback) {
+//   let spritePath = dirs.source + '/blocks/sprite-svg--localstorage/svg/';
+//   if (fileExist(spritePath) !== false) {
+//     console.log('---------- Сборка SVG спрайта');
+//     return gulp.src(spritePath + '*.svg')
+//       .pipe(svgmin(function (file) {
+//         return {
+//           plugins: [{
+//             cleanupIDs: {
+//               minify: true
+//             }
+//           }]
+//         }
+//       }))
+//       .pipe(svgstore({ inlineSvg: true }))
+//       .pipe(cheerio(function ($) {
+//         $('svg').attr('style', 'display:none');
+//       }))
+//       .pipe(rename('sprite-svg--ls.svg'))
+//       .pipe(size({
+//         title: 'Размер',
+//         showFiles: true,
+//         showTotal: false,
+//       }))
+//       .pipe(gulp.dest(dirs.source + '/blocks/sprite-svg--localstorage/img'));
+//   }
+//   else {
+//     console.log('---------- Сборка SVG спрайта: нет папки с картинками');
+//     callback();
+//   }
+// });
+
+// Сборка SVG-спрайта для блока sprite-svg в HTML
+gulp.task('svgparty', function () {
   if (fileExist(spritePath) !== false) {
-    console.log('---------- Сборка SVG спрайта');
+    console.log('---------- SVG party started');
     return gulp.src(spritePath + '*.svg')
-      .pipe(svgmin(function (file) {
-        return {
-          plugins: [{
-            cleanupIDs: {
-              minify: true
-            }
-          }]
+      .pipe(svgmin({
+        js2svg: {
+          pretty: true
         }
       }))
-      .pipe(svgstore({ inlineSvg: true }))
-      .pipe(cheerio(function ($) {
-        $('svg').attr('style', 'display:none');
+      .pipe(cheerio({
+        run: function ($) {
+          $('[fill]').removeAttr('fill');
+          $('[style]').removeAttr('style');
+        },
+        parserOptions: { xmlMode: true }
       }))
-      .pipe(rename('sprite-svg--ls.svg'))
+      .pipe(replace('&gt;', '>'))
+      .pipe(svgparty({
+        mode: "symbols",
+        preview: false,
+        selector: "icon-%f",
+        svg: {
+          symbols: 'sprite.html'
+        }
+      }))
       .pipe(size({
         title: 'Размер',
         showFiles: true,
         showTotal: false,
       }))
-      .pipe(gulp.dest(dirs.source + '/blocks/sprite-svg--localstorage/img'));
-  }
-  else {
-    console.log('---------- Сборка SVG спрайта: нет папки с картинками');
+      .pipe(gulp.dest(dirs.source + '/blocks/sprite-svg--html/sprite'));
+  } else {
+    console.log('---------- SVG party failed');
     callback();
   }
 });
+
 
 // Сборка HTML
 gulp.task('html', function () {
@@ -286,7 +327,7 @@ gulp.task('clean', function () {
 // Сборка всего
 gulp.task('build', gulp.series(
   'clean',
-  'svgstore',
+  'svgparty',
   gulp.parallel('less', 'copy:css', 'img', 'js', 'js:copy', 'fonts:copy'),
   'html'
 ));
