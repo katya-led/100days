@@ -6,6 +6,7 @@
 .notifications {
   .container-position();
   background-color: #264057;
+  position: relative;
 
   &__panel {
     width: 300px;
@@ -15,6 +16,8 @@
     border-radius: 3px;
     box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
     overflow: hidden;
+
+    display: none;
   }
 
   &__header {
@@ -154,6 +157,34 @@
         
     b {
       font-weight: 600;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: 170px;
+    height: 270px;
+    top: 65px;
+    left: 50px;
+    margin: 0;
+    padding: 10px 0;
+    background: #43627d;
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+    transform: translate3d(20px,0,0);
+  }
+
+  &__point {
+    color: #93b2cd;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      color: #fff;
+      background: #385269;
     }
   }
 }
