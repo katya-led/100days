@@ -1,0 +1,218 @@
+// Для импорта в диспетчер подключений: @import './src/blocks/gallery/gallery.less';
+
+@import '../../less/variables.less';     // только для удобства обращения к переменным
+
+
+.gallery {
+  .container-position();
+  background: #fff;
+  color: #fff;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__wrapper {
+    width: 290px;
+    height: 290px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+  }
+
+  &__profile {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    background: #f1f1f1;
+    cursor: pointer;
+
+    &:hover {
+      .gallery__plus {
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+      }
+      
+      .gallery__overlay {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0;
+    transition: all .6s ease-in-out;
+    z-index: 1;
+  }
+
+  &__plus {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 52px;
+    left: 54px;
+    background: #EC6565;
+    border-radius: 50%;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.5);
+    transition: all .4s ease-in-out;
+    opacity: 0;
+    transform: scale(2);
+    pointer-events: none;
+    z-index: 2;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 14px;
+      height: 2px;
+      top: 14px;
+      left: 8px;
+      background: #fff;
+    }
+    
+    &:after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 14px;
+      top: 8px;
+      left: 14px;
+      background: #fff;
+    }
+  }
+
+  &__detail {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #EC6565;
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  &__close {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    right: 15px;
+    background: #EC6565;
+    border-radius: 50%;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 14px;
+      height: 2px;
+      top: 24px;
+      left: 18px;
+      transform: rotate(45deg);
+      background: #fff;
+    }
+    
+    &:after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 14px;
+      top: 18px;
+      left: 24px;
+      transform: rotate(45deg);
+      background: #fff;
+    }
+
+    &:hover {
+      background: #fff;
+
+      &:after, &:before {
+        background: #EC6565;
+      }
+    }
+  }
+
+  &__header {
+    height: 110px;
+    background: #999;
+  }
+
+  &__wrapper-img {
+    position: absolute;
+    z-index: 111;
+    top: 65px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    background: #f1f1f1;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 4px 6px 15px rgba(0,0,0,0.2);
+  }
+
+  &__info {
+    padding-top: 50px;
+  }
+
+  &__name {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__action {
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  &__btn {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #fff;
+    background: #EC6565;
+    color: #fff;
+    margin: 0 20px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    
+    &:hover {
+      background: #fff;
+      color: #EC6565;
+      box-shadow: 2px 3px 6px 0 rgba(0,0,0,0.2);
+
+      .gallery__icon {
+        use {
+          fill: #EC6565;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+
+    use {
+      transition: all .2s ease-in-out;
+    }
+  }
+
+}
