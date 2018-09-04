@@ -72,7 +72,6 @@ $( document ).ready(function() {
     console.log('no burgers here its vegan place')
   }
 
- 
 
   // experiment action burger
   var animation = document.querySelector(".burger-animation__link");
@@ -82,7 +81,5 @@ $( document ).ready(function() {
     animation.classList.toggle("burger-animation__link--close");
   });
   }
-
-
 
 });

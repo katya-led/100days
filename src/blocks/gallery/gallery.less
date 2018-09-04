@@ -5,7 +5,7 @@
 
 .gallery {
   .container-position();
-  background: #fff;
+  background: #f1f1f1;
   color: #fff;
 
   &__inner {
@@ -26,8 +26,26 @@
     position: relative;
     width: 140px;
     height: 140px;
-    background: #f1f1f1;
+    background: #f9f9f9;
+    background-repeat: no-repeat;
+    background-size: cover;
     cursor: pointer;
+
+    &--1 {
+      background-image: url('/img/gallery_photo_1.jpg');
+    }
+
+    &--2 {
+      background-image: url('/img/gallery_photo_2.jpg');
+    }
+
+    &--3 {
+      background-image: url('/img/gallery_photo_3.jpg');
+    }
+
+    &--4 {
+      background-image: url('/img/gallery_photo_4.jpg');
+    }
 
     &:hover {
       .gallery__plus {
@@ -99,6 +117,13 @@
     background: #EC6565;
     overflow: hidden;
     z-index: 100;
+    display: none;
+    pointer-events: none;
+
+    &.active {
+      display: block;
+      pointer-events: all;
+    }
   }
 
   &__close {
@@ -146,6 +171,10 @@
   &__header {
     height: 110px;
     background: #999;
+    background-image: url('/img/gallery_header_bg.jpg');
+    background-position: 0% 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   &__wrapper-img {
