@@ -36,7 +36,18 @@ function ready(fn) {
 
 // Свой код с jQuery
 
-$( document ).ready(function() {
+  $( document ).ready(function() {
+
+
+  //gallery show/close detail
+  $('.gallery__profile').on('click', function() {
+    
+    $('.gallery__detail').addClass('active');
+  });
+
+  $('.gallery__close').on('click', function() {
+    $('.gallery__detail').removeClass('active');
+  });
 
 
   // experiment day/night time 
