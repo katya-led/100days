@@ -50,8 +50,19 @@ function ready(fn) {
   });
 
 
+  //notifications search show/close
+  $('.notifications__search-icon').on('click', function() {
+    $('.notifications__search-input').toggleClass('notifications__search-show');
+  });
+
+  //notifications menu show/close
+  $('.notifications__menu-icon').on('click', function() {
+    $('.notifications__panel').toggleClass('notifications__show-menu');
+    $('.notifications__menu').toggleClass('notifications__active-menu');
+  });
+
+
   // experiment day/night time 
-  
   try {
     date = new Date();
     var hours = date.getHours(); 
@@ -70,8 +81,8 @@ function ready(fn) {
       console.log('no time here its timeless place :3')
   }
 
+
   // action burger 
-  
   try {
     var burger = document.querySelector(".burger__toggler");
       burger.addEventListener("click", function() {

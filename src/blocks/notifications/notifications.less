@@ -17,6 +17,11 @@
     box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
     overflow: hidden;
     z-index: 100;
+    transition: all .5s ease-in-out;
+  }
+
+  &__panel.notifications__show-menu {
+    transform: translate3d(135px,0,0);
   }
 
   &__header {
@@ -58,8 +63,17 @@
     padding: 0 15px;
     font-size: 13px;
     color: #666;
+    z-index: 150;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(15px);
+    transition: all .3s ease-in-out;
+  }
 
-    display: none;
+  &__search-input.notifications__search-show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
   }
 
   &__menu-icon {
@@ -182,8 +196,12 @@
     padding: 10px 0;
     background: #43627d;
     border-radius: 3px;
-    transition: all .5s ease-in-out;
     transform: translate3d(20px,0,0);
+    transition: all .5s ease-in-out;
+  }
+
+  &__menu.notifications__active-menu {
+    transform: translate3d(-20px,0,0);
   }
 
   &__point {
