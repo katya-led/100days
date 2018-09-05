@@ -119,13 +119,23 @@
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: all .4s ease-in-out
+    transition: all .3s ease-in-out
   }
 
   &__detail.active {
     visibility: visible;
     opacity: 1;
     pointer-events: all;
+
+    .gallery__header {
+      transform: translate3d(0,0,0);
+      transition: all 1s ease-out;
+    }
+
+    .gallery__wrapper-img {
+      transform: translate3d(0,0,0);
+      transition: all 1s ease-out;
+    }
   }
 
   &__close {
@@ -138,6 +148,7 @@
     border-radius: 50%;
     transition: all .4s ease-in-out;
     cursor: pointer;
+    z-index: 150;
 
     &:before {
       position: absolute;
@@ -177,6 +188,8 @@
     background-position: 0% 90%;
     background-repeat: no-repeat;
     background-size: cover;
+    transform: translate3d(0,-105%,0);
+    transition: all .5s ease-in;
   }
 
   &__wrapper-img {
@@ -193,6 +206,8 @@
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 4px 6px 15px rgba(0,0,0,0.2);
+    transform: translate3d(0,-180%,0);
+    transition: all .5s ease-in;
   }
 
   &__info {
