@@ -1,7 +1,7 @@
 {
-  "name": "skydrive",
+  "name": "100days",
   "version": "1.0.0",
-  "description": "fly company",
+  "description": "challenge",
   "scripts": {
     "test": "node_modules/.bin/stylelint './src/**/*.less'",
     "start": "./node_modules/.bin/gulp",
@@ -9,11 +9,11 @@
     "build": "cross-env NODE_ENV=production npm start build",
     "precommit": "npm test"
   },
-  "author": "thecatz",
+  "author": "Katya Led",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/thecatz/skydrive.git"
+    "url": "https://github.com/katya-led/100days"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
@@ -48,7 +48,6 @@
     "stylelint-declaration-use-variable": "^1.5.0"
   },
   "config": {
-    "ghPages": "https://thecatz.gitlab.io/skydrive/",
     "directories": {
       "source": "./src",
       "build": "./build"
