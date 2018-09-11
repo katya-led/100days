@@ -1,6 +1,8 @@
-https://github.com/katya-led/100days
-
 # 100 days - CSS challenge
+
+Как это выглядит: https://katya-led-100days-css.netlify.com
+
+---
 
 Установка: `npm i`.
 
