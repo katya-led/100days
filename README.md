@@ -1,6 +1,6 @@
 # 100 days - CSS challenge
 
-Как это выглядит: https://katya-led-100days-css.netlify.com
+Как это выглядит: http://katya-led.ru/100dayscss/
 
 ---
 
